@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body { @apply bg-offwhite text-ink antialiased; }
+h1, h2, h3 { @apply font-extrabold tracking-tight text-navy; }
+:focus-visible { outline: 3px solid #4CAF70; outline-offset: 3px; }
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+.hero-float { animation: float 7s ease-in-out infinite; }
+@keyframes float { 50% { transform: translateY(-8px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-float { animation: none; }
+  * { transition-duration: .01ms !important; }
+}
